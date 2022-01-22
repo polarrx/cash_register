@@ -1,6 +1,8 @@
 import re
 import os
-import time
+
+from util.database import *
+
 
 
 # Menu de opciones
@@ -23,7 +25,7 @@ def run(): # Funcion de arranque que ejecuta la Funcion del menu de opciones
 	#command = command.upper()
 
 	if command == '1':
-		create_inventary()
+		menu_inv_select_opc()
 	elif command == '2':
 	    view_inventary()
 	elif command == '3':
