@@ -1,4 +1,4 @@
-import re 
+import re
 import os
 import time
 
@@ -36,7 +36,7 @@ def run(): # Funcion de arranque que ejecuta la Funcion del menu de opciones
 		os._exit(1)
 	else:
 		print('Comando inválido, gafo')
-		time.sleep(2)
+		time.sleep(1)
 		run()
 
 if __name__ == '__main__':
