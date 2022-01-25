@@ -2,6 +2,7 @@ import re
 import os
 import time
 
+# Importamos el modulo de la aplicación
 from util.database import *
 
 
@@ -18,7 +19,9 @@ def print_options():
 	print('[3] Ver ventas')
 	print('[4] SALIR')
 
-def run(): # Funcion de arranque que ejecuta la Funcion del menu de opciones
+ # Funcion de arranque que
+ # ejecuta la Funcion del menu de opciones
+def run():
 
 	print_options()
 
@@ -26,9 +29,9 @@ def run(): # Funcion de arranque que ejecuta la Funcion del menu de opciones
 	#command = command.upper()
 
 	if command == '1':
-		menu_inv_select_opc()
+		menu_inv()
 	elif command == '2':
-	    view_inventary()
+	    view_inv()
 	elif command == '3':
 		print('Mira menol esta opcion esta construyendose')
 		run()

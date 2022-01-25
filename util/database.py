@@ -10,20 +10,23 @@ def menu_inv():
     print('[2] para ver articulos listados')
     print('\n')
 
-def menu_inv_select_opc():
-    menu_inv()
-
     command = input('')
-    if command == 1:
-        print('Ingrese un id para el producto')
-        conectar_databese()
-        crear_inventario()
-        print('Ingrese nombre del producto')
-        crear_inventario(Nombre)
+
+    if command == '1':
+        print('Ingrese un id para el producto: ')
+        product = str(input())
+        connect_database(id, Nombre)
+        product = create_inv(id, Nombre)
+"""
+        print('Ingrese nombre del producto:')
+        product = str(input())
+        connect_database()
+        product = create_inv(Nombre)
+"""
     else:
         print('Eres grande, no te rindas')
 
-def conectar_databese():
+def connect_database():
     try:
         conexion = sqlite3.connect('inventario.db')
         print('Se ha establecido la coneción con la base de datos')
@@ -31,13 +34,13 @@ def conectar_databese():
     except Error:
         print('Ha ocurrido un error')
 
-def crear_inventario(conectar_databese):
-    cursor = conectar_databese.cursor()
+def create_inv(connect_database, id, Nombre ):
+    cursor = connect_database.cursor()
     inv_sql = ''' CREATE TABLE IF NOF EXISTS inventario(
     id INTEGER PRIMARY KEY
     Nombre TEXT NOT NULL
     Precio INTEGER
     )'''
     cursor.execute(inv_sql)
-    conectar_databese.commit()
-    conectar_databese.close()
+    connect_database.commit()
+    connect_database.close()
